@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-4.3.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
+		http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+
+	<context:component-scan base-package="com.human.*" />
+
+	<mvc:annotation-driven></mvc:annotation-driven>
+	
+	<bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"/>
+	
+	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="WEB-INF/views/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+
+	<mvc:resources location="/resources/book_images/" mapping="/book_images/**"></mvc:resources>
+	<mvc:resources location="/resources/images/" mapping="/images/**"></mvc:resources>
+	<mvc:resources location="/resources/images/portfolio/" mapping="/portfolio/**"></mvc:resources>
+		<mvc:resources location="/resources/fonts/" mapping="/fonts/**"></mvc:resources>
+	<mvc:resources location="/resources/fonts/font-awesome-4.7.0/" mapping="/font-awesome-4.7.0/**"></mvc:resources>
+	<mvc:resources location="/resources/fonts/Linearicons-Free-v1.0.0/" mapping="Linearicons-Free-v1.0.0/**"></mvc:resources>
+	<mvc:resources location="/resources/fonts/poppins/" mapping="/poppins/**"></mvc:resources>
+	<mvc:resources location="/resources/css/" mapping="/css/**"></mvc:resources>
+	<mvc:resources location="/resources/js/" mapping="/js/**"></mvc:resources>
+	<mvc:resources location="/resources/owl-carousel/" mapping="/owl-carousel/**"></mvc:resources>
+	<mvc:resources location="/resources/vendor/" mapping="/vendor/**"></mvc:resources>
+	<mvc:resources location="/css/subpage/" mapping="/css/**"></mvc:resources>
+	<mvc:resources location="/resources/book/" mapping="/book/**"></mvc:resources>
+	
+</beans>

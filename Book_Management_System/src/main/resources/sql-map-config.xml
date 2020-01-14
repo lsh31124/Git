@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<typeAliases>
+		<typeAlias type="com.human.user.UserVO" alias="user"></typeAlias>
+		<typeAlias type="com.human.biz.book.BookVO" alias="book"></typeAlias>
+		<typeAlias type="com.human.biz.rent.RentVO" alias="rent"></typeAlias>
+		<typeAlias type="com.human.biz.address.AddressVO" alias="address"/>
+		<typeAlias type="com.human.biz.cart.CartVO" alias="cart"/>
+		<typeAlias type="com.human.biz.purchase.PurchaseVO" alias="purchase"/>
+	</typeAliases>
+
+	<mappers>
+		<mapper resource="/mappings/user-Mapper.xml" />
+		<mapper resource="/mappings/Book-Mapper.xml"/>
+		<mapper resource="/mappings/Address-Mapper.xml"/>
+		<mapper resource="/mappings/Cart-Mapper.xml"/>
+		<mapper resource="/mappings/Rent-Mapper.xml"/>
+		<mapper resource="/mappings/purchase-Mapper.xml"/>
+	</mappers>
+</configuration>

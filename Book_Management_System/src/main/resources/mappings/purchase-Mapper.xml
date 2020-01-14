@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="purchaseDAO">
+
+	<insert id="insertOrder" parameterType="purchase" >
+		INSERT INTO orders (oseq,id)
+		VALUES(#{oseq},#{id})
+	</insert>
+
+	<insert id="insertOrderDetail">
+		INSERT INTO orders_detail
+		(odseq,oseq,book_code,quantity)
+		values(order_detail_seq.nextval,#{oseq},#{book_code},#{quantity})
+	</insert>
+
+	<select id="listOrderById" resultType="purchase">
+		SELECT * FROM orders_view
+		WHERE id=#{id}
+	</select>
+
+	<select id="selectSeqOrdering" parameterType="String" resultType="Integer">
+		SELECT distinct oseq
+		FROM orders_view
+		WHERE id=#{id} AND result='1' ORDER BY oseq desc
+	</select>
+
+	<select id="selectMaxOseq" resultType="Integer">
+		SELECT max(oseq)
+		FROM orders
+	
+	</select>
+
+</mapper>

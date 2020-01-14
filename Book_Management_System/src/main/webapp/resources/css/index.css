@@ -1,0 +1,34 @@
+@charset "UTF-8";
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+
+#wrap {
+	width: 978px;
+	margin: 0 auto;
+}
+
+
+#detailBook{
+width: 978px;
+height: 400px;
+}
+
+h1{
+background-color:#04B431; 
+}
+.line {
+  	margin: 0 auto;
+  }
+.content {
+  	width: 230px;
+  	height: 50px;
+   }
+
+.book_search{
+   width: 1270px;
+   height: 50px;
+  }
